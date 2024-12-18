@@ -61,6 +61,12 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	 <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+	<dependency>
+	    <groupId>org.flywaydb</groupId>
+	    <artifactId>flyway-core</artifactId>
+	    <version>9.15.0</version>
+	</dependency>
 
 	<build>
 		<plugins>
