@@ -1,12 +1,16 @@
 package com.eventostec.api.domain.event;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.UUID;
 
+import com.eventostec.api.domain.address.Address;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "event")
@@ -22,11 +26,15 @@ public class Event {
   private Boolean remote;
   private Date date;  
   
+  @OneToOne(mappedBy = "event", cascade = CascadeType.ALL)
+  private Address address;
+  
 public Event() {
 	super();
 }
 
-public Event(UUID id, String title, String description, String imgUrl, String eventUrl, Boolean remote, Date date) {
+public Event(UUID id, String title, String description, String imgUrl, String eventUrl, Boolean remote, Date date,
+		Address address) {
 	super();
 	this.id = id;
 	this.title = title;
@@ -35,6 +43,7 @@ public Event(UUID id, String title, String description, String imgUrl, String ev
 	this.eventUrl = eventUrl;
 	this.remote = remote;
 	this.date = date;
+	this.address = address;
 }
 
 public UUID getId() {
@@ -78,6 +87,12 @@ public Date getDate() {
 }
 public void setDate(Date date) {
 	this.date = date;
+}
+public Address getAddress() {
+	return address;
+}
+public void setAddress(Address address) {
+	this.address = address;
 }
   
   
