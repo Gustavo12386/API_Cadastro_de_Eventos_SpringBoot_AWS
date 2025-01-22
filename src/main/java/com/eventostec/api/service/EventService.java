@@ -87,28 +87,32 @@ public class EventService {
   }
   
   public List<EventResponseDTO> getFilteredEvents(int page, int size, String title, String city, String uf,
-		  Date startDate, Date endDate){	
-	 city = (city != null) ? city : "";
-	 uf = (uf != null) ? uf : "";
-	 startDate = (startDate != null) ? startDate : new Date(0);
-	 endDate = (endDate != null) ? endDate : new Date();
+	      Date startDate, Date endDate){
+	  
+	  city = (city != null) ? city : "";
+	  uf = (uf != null) ? uf : "";
+	  startDate = (startDate != null) ? startDate : new Date(0);
+	  endDate = (endDate != null) ? endDate : new Date();
+	  
+	  startDate = (startDate != null) ? startDate : new Date(0);
+	  endDate = (endDate != null) ? endDate : new Date();
 	  
 	  Pageable pageable = PageRequest.of(page, size);
-	  Page<Event> eventsPage = this.repository.findFilteredEvents(new Date(), title, city, uf, startDate, endDate, pageable);
-	  return eventsPage.map(event -> new EventResponseDTO(
-			  event.getId(),
-			  event.getTitle(),
-			  event.getDescription(),
-			  event.getDate(),
-			  event.getAddress() != null ? event.getAddress().getCity() : "",
-			  event.getAddress() != null ? event.getAddress().getUf() : "",
-			  event.getRemote(),
-			  event.getEventUrl(),
-			  event.getImgUrl())
-			  )
-			  .stream().toList();
+	  Page<Event> eventsPage = this.repository.findFilteredEvents(title, city, uf, startDate, endDate, pageable);
 	  
-  }
+	  return eventsPage.map(event -> new EventResponseDTO(
+	          event.getId(),
+	          event.getTitle(),
+	          event.getDescription(),
+	          event.getDate(),
+	          event.getAddress() != null ? event.getAddress().getCity() : "",
+	          event.getAddress() != null ? event.getAddress().getUf() : "",
+	          event.getRemote(),
+	          event.getEventUrl(),
+	          event.getImgUrl())
+	          )
+	          .stream().toList();
+	}
   
   public EventDetailsDTO getEventDetails(UUID eventId) {
       Event event = repository.findById(eventId)
