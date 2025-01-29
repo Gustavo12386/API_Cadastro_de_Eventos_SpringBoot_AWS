@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 - Esse projeto se trata de uma API de Cadastro e Inscrição de Eventos feito com o Framework Spring Boot da linguagem de programação Java, Banco de Dados PostgreSQL
-e a tecnologia AWS para a realização de deploy com a utilização de serviços como: EC2, RDS para banco de dados, VPC e Bucket.
+e a tecnologia AWS para a realização de deploy com a utilização de serviços como: EC2, RDS para banco de dados, VPC e S3(Bucket).
 
 ## Tecnologias Utilizadas
 - Java, SpringBoot, Spring Dev Tools Suite 4(IDE), PostgreSQL e AWS.
