@@ -1,9 +1,9 @@
 # API_Cadastro_de_Eventos_SpringBoot_AWS
 
 ## 💻 Sobre a Aplicação
-- Essa aplicação se trata de uma API de Cadastro e Inscrição de Eventos feito com o Framework Spring Boot da linguagem de programação Java, Banco de Dados PostgreSQL
+- Essa aplicação se trata de uma API de Cadastro e Inscrição de Eventos feito com o Framework Spring Boot da linguagem de programação Java, Banco de Dados PostgreSQL, Arquitetura Hexagonal
 e a tecnologia AWS(Amazon Web Services) para a realização de deploy com a utilização de serviços como: EC2(Elastic Compute Cloud), RDS(Relational Database Service) para banco de dados,
-VPC(Virtual Private Client) e S3(Simple Storage Service).
+VPC(Virtual Private Client), IAM(Identity and Access Management e S3(Simple Storage Service).
 
 ## ✨ Tecnologias Utilizadas
 - Java 21
@@ -18,6 +18,7 @@ VPC(Virtual Private Client) e S3(Simple Storage Service).
 - [ ] Criação do Ambiente na AWS
 - [ ] Integração do Ambiente com a API
 - [ ] Execução da aplicação no AWS CLI
+- [ ] Implementação da Arquitetura Hexagonal
 
 ## 🚀 Como Executar
 - Clone o repositório
