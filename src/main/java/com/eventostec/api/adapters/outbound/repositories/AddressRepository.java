@@ -1,4 +1,4 @@
-package com.eventostec.api.repositories;
+package com.eventostec.api.adapters.outbound.repositories;
 
 import java.util.Optional;
 import java.util.UUID;

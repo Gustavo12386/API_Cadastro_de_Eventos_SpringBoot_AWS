@@ -1,4 +1,4 @@
-package com.eventostec.api.service;
+package com.eventostec.api.application.service;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -6,11 +6,11 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eventostec.api.adapters.outbound.repositories.AddressRepository;
 import com.eventostec.api.domain.address.Address;
 
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
-import com.eventostec.api.repositories.AddressRepository;
 
 
 @Service

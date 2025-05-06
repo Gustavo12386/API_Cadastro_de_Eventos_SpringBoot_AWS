@@ -1,4 +1,4 @@
-package com.eventostec.api.controller;
+package com.eventostec.api.adapters.inbound.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -10,25 +10,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.eventostec.api.application.service.EventServiceImpl;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventDetailsDTO;
 import com.eventostec.api.domain.event.EventRequestDTO;
 import com.eventostec.api.domain.event.EventResponseDTO;
-import com.eventostec.api.service.EventService;
 
 @RestController
 @RequestMapping("/api/event")
 public class EventController {
-	
-	
+
 	@Autowired
-	private EventService eventService;
+	private EventServiceImpl eventService;
     
     @PostMapping(consumes = "multipart/form-data")
 	public ResponseEntity<Event> create(@RequestParam("title") String title,
@@ -72,3 +70,4 @@ public class EventController {
     	
     }
 }
+

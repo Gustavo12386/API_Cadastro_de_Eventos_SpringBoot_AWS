@@ -1,4 +1,4 @@
-package com.eventostec.api.controller;
+package com.eventostec.api.adapters.inbound.controller;
 
 import java.util.UUID;
 
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.eventostec.api.application.service.CouponService;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
-import com.eventostec.api.service.CouponService;
 
 @RestController
 @RequestMapping("/api/controller")
 public class CouponController {
-  
+ 
 	@Autowired
 	private CouponService couponService;
 	
